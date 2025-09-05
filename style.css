@@ -550,3 +550,46 @@ body{
     font-size: 0.8rem;
   }
 }
+/* Responsive - แก้ปัญหามือถือ */
+@media (max-width: 768px) {
+  body {
+    overflow: auto; /* ให้เลื่อนจอได้ */
+  }
+
+  .wrapper {
+    width: 100vw;
+    height: auto;
+    min-height: 100vh;
+    padding: 1rem;
+    perspective: none; /* ปิดเอฟเฟกต์ 3D */
+  }
+
+  /* ให้แต่ละหน้าหนังสือเป็น block ธรรมดา */
+  .book {
+    flex-direction: column;
+    perspective: none;
+  }
+  .book .book-page {
+    position: relative;
+    width: 100%;
+    height: auto;
+    transform: none !important;
+    box-shadow: none;
+    margin-bottom: 1rem;
+  }
+
+  .book-page .page-front,
+  .book-page .page-back {
+    position: relative;
+    transform: none !important;
+    padding: 1rem;
+  }
+
+  /* ปิดปุ่มพลิก */
+  .nextprev-btn,
+  .back-profile {
+    display: none !important;
+  }
+}
+
+
