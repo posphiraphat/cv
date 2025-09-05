@@ -1476,6 +1476,144 @@ body{
     background: #008ecc;
   }
 }
+/* ===== PC Layout (เหมือนเดิมของคุณ) ===== */
+/* ... [โค้ด PC เดิมทั้งหมดของคุณ] ... */
+
+/* ============================= */
+/* 📱 Mobile Flat Layout (No 3D) */
+/* ============================= */
+@media (max-width: 768px) {
+  body {
+    background: var(--bg-color);
+    overflow-x: hidden;
+  }
+
+  .wrapper { display: none; } /* ❌ ซ่อน PC 3D */
+  .mobile-container { display: flex; }
+
+  .mobile-container {
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-page {
+    display: none;
+    width: 100%;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+    background: var(--pages-color);
+    animation: fadeSlide 0.5s ease;
+    text-align: center;
+  }
+
+  .mobile-page.active { display: block; }
+
+  @keyframes fadeSlide {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .mobile-card {
+    max-width: 420px;
+    margin: auto;
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  }
+
+  .mobile-card h1.title {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: var(--main-color);
+  }
+
+  .mobile-card img {
+    max-width: 120px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 3px solid var(--main-color);
+  }
+
+  .mobile-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .mobile-card ul li {
+    padding: 10px;
+    margin: 8px 0;
+    background: #f9f9f9;
+    border-radius: 8px;
+    text-align: left;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .mobile-card ul li i {
+    color: var(--main-color);
+    font-size: 18px;
+  }
+
+  /* Contact form */
+  .mobile-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .mobile-card input,
+  .mobile-card textarea {
+    padding: 10px;
+    border: var(--border);
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  .mobile-card button {
+    padding: 10px;
+    background: var(--main-color);
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .mobile-card button:hover {
+    background: #008ecc;
+  }
+
+  /* Navigation */
+  .nav-controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .nav-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--main-color);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .nav-btn:hover {
+    background: #008ecc;
+  }
+}
+
 
 
 
