@@ -139,5 +139,43 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+// ✅ Script ของ PC (Book Flip) อยู่ด้านบน ...
+
+// =============================
+// 📱 Mobile Page Navigation
+// =============================
+document.addEventListener("DOMContentLoaded", () => {
+  const pages = document.querySelectorAll(".mobile-page");
+  let current = 0;
+
+  if (pages.length > 0) {
+    pages[current].classList.add("active");
+  }
+
+  function showPage(index) {
+    pages.forEach((p, i) => {
+      p.classList.toggle("active", i === index);
+    });
+  }
+
+  document.querySelectorAll(".nav-btn.next").forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (current < pages.length - 1) {
+        current++;
+        showPage(current);
+      }
+    });
+  });
+
+  document.querySelectorAll(".nav-btn.prev").forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (current > 0) {
+        current--;
+        showPage(current);
+      }
+    });
+  });
+});
+
 
 
