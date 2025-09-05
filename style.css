@@ -18,7 +18,6 @@
     --pages-color:linear-gradient(90deg, #fff, #ddd);
     --border: 0.125rem solid #00abf0;
     --box-shadow: 0 0 0.8rem rgba(0,0,0,0.2);
-
 }
 body{
     display: flex;
@@ -39,8 +38,7 @@ body{
     animation: show-animate 2s forwards;
 }
 @keyframes show-animate {
-    0%,
-    30% {
+    0%, 30% {
         opacity: 0;
         transform: rotate(-20deg);
     }
@@ -68,7 +66,6 @@ body{
 .cover.cover-right{
     z-index: 100;
     transition: transform 1s cubic-bezier(.645, .045, .355, 1);
-
 }
 .cover.cover-right.turn {
     transform: rotateY(180deg);
@@ -128,7 +125,6 @@ body{
     color: var(--main-color);
     margin: 0 .2rem;
     transition: .5s;
-
 }
 .profile-page .social-media a:hover{
     background-color: var(--main-color);
@@ -180,7 +176,6 @@ body{
 .book-page.page-right.turn{
     transform: rotateY(-180deg);
 }
-
 .book-page .page-front,
 .book-page .page-back{
     position: absolute;
@@ -303,14 +298,12 @@ body{
     color: var(--main-color);
 }
 
-
-/* skilss box */
+/* skills box */
 .skills-box{
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
     margin-top: 2rem;
-
 }
 .skills-box .skills-content{
     flex: 1 1 20rem;
@@ -348,7 +341,6 @@ body{
 /* portfolio */
 .portfolio-box{
     margin-top: 2rem;
-
 }
 .portfolio-box .img-box{
     display: flex;
@@ -400,8 +392,7 @@ body{
     margin: 0 1 .15rem;
 }
 
-
-/* Contact Me! */
+/* Contact Me */
 .contact-box{
     margin-top: 2rem;
     text-align: center;
@@ -416,7 +407,6 @@ body{
     color: var(--text-color);
     margin-bottom: 1.5rem;
 }
-
 .contact-box .field::placeholder{
     color: var(--text-color);
 }
@@ -431,7 +421,6 @@ body{
     background-color: transparent;
     color: var(--main-color);
 }
-
 .back-profile{
     position: absolute;
     bottom: 1.2rem;
@@ -467,6 +456,7 @@ body{
     transform: translateX(-50%) scale(1);
     top: -1.8rem;
 }
+
 /* Social media brand colors */
 .profile-page .social-media a.facebook {
     background: #1877f2;
@@ -477,7 +467,6 @@ body{
     filter: brightness(1.1);
     transform: scale(1.1);
 }
-
 .profile-page .social-media a.twitter {
     background: #1da1f2;
     border: none;
@@ -487,7 +476,6 @@ body{
     filter: brightness(1.1);
     transform: scale(1.1);
 }
-
 .profile-page .social-media a.instagram {
     background: radial-gradient(circle at 30% 30%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
     border: none;
@@ -497,25 +485,40 @@ body{
     filter: brightness(1.1);
     transform: scale(1.1);
 }
-/* ---------- Responsive adjustments ---------- */
-@media (max-width: 1200px) {
-  .wrapper {
-    width: 90vw;
-    height: 70vh;
-    padding: 1rem;
-  }
-}
 
+/* ---------- Responsive adjustments ---------- */
 @media (max-width: 768px) {
   body {
-    overflow: auto; /* ให้เลื่อนจอได้ */
+    overflow: auto;
   }
   .wrapper {
     width: 100vw;
     height: auto;
     min-height: 100vh;
     padding: 1rem;
-    perspective: 150rem;
+    perspective: none;
+  }
+  .book {
+    flex-direction: column;
+    perspective: none;
+  }
+  .book .book-page {
+    position: relative;
+    width: 100%;
+    height: auto;
+    transform: none !important;
+    box-shadow: none;
+    margin-bottom: 1rem;
+  }
+  .book-page .page-front,
+  .book-page .page-back {
+    position: relative;
+    transform: none !important;
+    padding: 1rem;
+  }
+  .nextprev-btn,
+  .back-profile {
+    display: none !important;
   }
   .profile-page img {
     max-width: 120px;
@@ -532,64 +535,4 @@ body{
     font-size: 0.9rem;
     margin: 0 .4rem;
   }
-  .services-box, .skills-box {
-    flex-direction: column;
-  }
 }
-
-@media (max-width: 420px) {
-  .profile-page h1 {
-    font-size: 1.5rem;
-  }
-  .profile-page h3 {
-    font-size: 1rem;
-  }
-  .btn {
-    width: 6.5rem;
-    height: 2.2rem;
-    font-size: 0.8rem;
-  }
-}
-/* Responsive - แก้ปัญหามือถือ */
-@media (max-width: 768px) {
-  body {
-    overflow: auto; /* ให้เลื่อนจอได้ */
-  }
-
-  .wrapper {
-    width: 100vw;
-    height: auto;
-    min-height: 100vh;
-    padding: 1rem;
-    perspective: none; /* ปิดเอฟเฟกต์ 3D */
-  }
-
-  /* ให้แต่ละหน้าหนังสือเป็น block ธรรมดา */
-  .book {
-    flex-direction: column;
-    perspective: none;
-  }
-  .book .book-page {
-    position: relative;
-    width: 100%;
-    height: auto;
-    transform: none !important;
-    box-shadow: none;
-    margin-bottom: 1rem;
-  }
-
-  .book-page .page-front,
-  .book-page .page-back {
-    position: relative;
-    transform: none !important;
-    padding: 1rem;
-  }
-
-  /* ปิดปุ่มพลิก */
-  .nextprev-btn,
-  .back-profile {
-    display: none !important;
-  }
-}
-
-
