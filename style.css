@@ -1079,5 +1079,113 @@ body{
     display: block; /* โชว์ Mobile */
   }
 }
+/* ✅ CSS 3D Portfolio ของเดิมอยู่ด้านบน ... */
+
+/* ============================= */
+/* 📱 Mobile Layout - Page Slider */
+/* ============================= */
+.mobile-slider {
+  display: none; /* PC ไม่ต้องใช้ */
+}
+
+.mobile-page {
+  display: none;
+  text-align: center;
+  padding: 20px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background: linear-gradient(to bottom, #ffffff, #f0f0f0);
+}
+
+.mobile-page.active {
+  display: block;
+}
+
+.mobile-page img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.mobile-page h2 {
+  margin: 10px 0;
+  font-size: 22px;
+}
+
+.mobile-page h4 {
+  margin: 5px 0 15px;
+  font-size: 16px;
+  color: #555;
+}
+
+.mobile-page p,
+.mobile-page ul {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.mobile-page ul {
+  list-style: none;
+  padding: 0;
+}
+
+.mobile-page ul li {
+  margin: 6px 0;
+  padding: 8px;
+  background: #f9f9f9;
+  border-radius: 6px;
+}
+
+.mobile-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mobile-page input,
+.mobile-page textarea,
+.mobile-page button {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.mobile-page button {
+  background: #00aaff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* ปุ่มนำทาง */
+.nav-btn {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: #00aaff;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.nav-btn i {
+  vertical-align: middle;
+}
+
+/* ============================= */
+/* 📱 เปิด Mobile Mode */
+/* ============================= */
+@media (max-width: 768px) {
+  .wrapper {
+    display: none; /* ซ่อนหนังสือ 3D */
+  }
+  .mobile-slider {
+    display: block; /* โชว์ Mobile */
+  }
+}
+
 
 
