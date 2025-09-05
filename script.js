@@ -103,3 +103,74 @@ pages.forEach((_, index) => {
 
 
 }) 
+
+// Mobile slider logic
+const mobilePages = document.querySelectorAll('.mobile-page');
+let currentPage = 0;
+
+function showPage(index) {
+  mobilePages.forEach((page, i) => {
+    page.classList.remove('active');
+    if (i === index) {
+      page.classList.add('active');
+    }
+  });
+}
+
+document.querySelectorAll('.nav-btn.next').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (currentPage < mobilePages.length - 1) {
+      currentPage++;
+      showPage(currentPage);
+    }
+  });
+});
+
+document.querySelectorAll('.nav-btn.prev').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (currentPage > 0) {
+      currentPage--;
+      showPage(currentPage);
+    }
+  });
+});
+
+// Show first page by default
+showPage(0);
+
+// =============================
+// 📱 Mobile Page Navigation
+// =============================
+document.addEventListener("DOMContentLoaded", () => {
+  const pages = document.querySelectorAll(".mobile-page");
+  let current = 0;
+
+  if (pages.length > 0) {
+    pages[current].classList.add("active");
+  }
+
+  function showPage(index) {
+    pages.forEach((p, i) => {
+      p.classList.toggle("active", i === index);
+    });
+  }
+
+  document.querySelectorAll(".nav-btn.next").forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (current < pages.length - 1) {
+        current++;
+        showPage(current);
+      }
+    });
+  });
+
+  document.querySelectorAll(".nav-btn.prev").forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (current > 0) {
+        current--;
+        showPage(current);
+      }
+    });
+  });
+});
+
