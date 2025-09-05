@@ -176,6 +176,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+// Mobile Page Navigation
+const mobilePages = document.querySelectorAll(".mobile-page");
+let currentPage = 0;
+
+function showPage(index) {
+  mobilePages.forEach((page, i) => {
+    page.classList.remove("active");
+    if (i === index) page.classList.add("active");
+  });
+}
+
+document.querySelectorAll(".nav-btn.next").forEach(btn => {
+  btn.addEventListener("click", () => {
+    if (currentPage < mobilePages.length - 1) currentPage++;
+    showPage(currentPage);
+  });
+});
+
+document.querySelectorAll(".nav-btn.prev").forEach(btn => {
+  btn.addEventListener("click", () => {
+    if (currentPage > 0) currentPage--;
+    showPage(currentPage);
+  });
+});
+
+showPage(currentPage);
+
 
 
 
