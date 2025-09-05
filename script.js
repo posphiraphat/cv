@@ -1,5 +1,4 @@
 
-
 const pageTurnBtn = document.querySelectorAll('.nextprev-btn');
 
 pageTurnBtn.forEach((el, index) => {
@@ -102,4 +101,38 @@ pages.forEach((_, index) => {
         }, 500)
     }, (index + 1) * 200 + 2100)
 
+
 }) 
+// Mobile slider logic
+const mobilePages = document.querySelectorAll('.mobile-page');
+let currentPage = 0;
+
+function showPage(index) {
+  mobilePages.forEach((page, i) => {
+    page.classList.remove('active');
+    if (i === index) {
+      page.classList.add('active');
+    }
+  });
+}
+
+document.querySelectorAll('.nav-btn.next').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (currentPage < mobilePages.length - 1) {
+      currentPage++;
+      showPage(currentPage);
+    }
+  });
+});
+
+document.querySelectorAll('.nav-btn.prev').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (currentPage > 0) {
+      currentPage--;
+      showPage(currentPage);
+    }
+  });
+});
+
+// Show first page by default
+showPage(0);
